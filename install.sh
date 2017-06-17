@@ -12,12 +12,12 @@ fi
 cd ../resource/
 cp "${DIR}/csgo_coloredchatmessages.txt" .
 
+threads=$(cat /proc/cpuinfo | grep GHz | wc -l)
+
 echo
 echo "Installed !"
 echo
 echo "Please set up your launch options:"
-echo -e "\t-novid -high -threads 16 -tickrate 128 -nojoy -language coloredchatmessages -console -exec autoexec"
-echo
-echo "Match your threads to your CPU physical + virtual cores"
+echo -e "\t-novid -high -threads ${threads} -tickrate 128 -nojoy -language coloredchatmessages -console -exec autoexec"
 echo
 
